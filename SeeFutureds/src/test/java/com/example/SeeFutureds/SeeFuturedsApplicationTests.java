@@ -1,0 +1,13 @@
+package com.example.SeeFutureds;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SeeFuturedsApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
