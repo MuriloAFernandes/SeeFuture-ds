@@ -1,6 +1,7 @@
 package com.SeeFutureds.SeeFuturedsapi.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -10,11 +11,22 @@ public class Pedido {
 
     @Id
     private Long id;
-    private Long agricultorId; // Guarda apenas o ID do agricultor
-    private Long sementeId;    // Guarda apenas o ID da semente
+
+    @Column("agricultor_id")
+    private Long agricultorId;
+
+    @Column("semente_id")
+    private Long sementeId;
+
+    @Column("quantidade_kg")
     private Double quantidadeKg;
+
+    @Column("valor_total")
     private BigDecimal valorTotal;
+
     private String status;
+
+    @Column("data_hora")
     private LocalDateTime dataHora;
 
     public Pedido() {
@@ -26,7 +38,7 @@ public class Pedido {
         this.quantidadeKg = quantidadeKg;
         this.valorTotal = valorTotal;
         this.status = status;
-        this.dataHora = LocalDateTime.now(); // Já preenche com a data e hora exata do pedido
+        this.dataHora = LocalDateTime.now();
     }
 
     public Long getId() { return id; }

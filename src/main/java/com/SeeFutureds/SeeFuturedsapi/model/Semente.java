@@ -1,6 +1,7 @@
 package com.SeeFutureds.SeeFuturedsapi.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import java.math.BigDecimal;
 
@@ -8,8 +9,13 @@ import java.math.BigDecimal;
 public class Semente {
     @Id
     private Long id;
+
     private String nome;
+
+    @Column("preco_por_kg")
     private BigDecimal precoPorKg;
+
+    @Column("estoque_kg")
     private Double estoqueKg;
 
     public Semente() {}

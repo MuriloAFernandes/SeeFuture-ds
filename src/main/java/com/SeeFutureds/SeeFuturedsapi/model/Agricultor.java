@@ -1,6 +1,7 @@
 package com.SeeFutureds.SeeFuturedsapi.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("agricultor")
@@ -8,9 +9,15 @@ public class Agricultor {
 
     @Id
     private Long id;
+
     private String nome;
+
+    @Column("cpf_cnpj")
     private String cpfCnpj;
+
+    @Column("endereco_entrega")
     private String enderecoEntrega;
+
     private String telefone;
 
     public Agricultor() {
